@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Grid_Test/1.0.0": {
+        "dependencies": {
+          "Awaad_Project": "1.0.0"
+        },
+        "runtime": {
+          "Grid_Test.dll": {}
+        }
+      },
+      "Awaad_Project/1.0.0": {
+        "runtime": {
+          "Awaad_Project.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Grid_Test/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Awaad_Project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
