@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-using Grid_Test._Globals;
+using Grid_Test.__Globals;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
 
 namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
@@ -19,7 +19,7 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
         {
             Dictionary<string, int> recs_Positions_At_Pressing_The_Dir_Key = new Dictionary<string, int>();
 
-            recs_Positions_At_Pressing_The_Dir_Key = get_Position_Of_All_Snake_Body_At_Pressing_Any_Dir_Key(arr_Snake_Parts);
+            recs_Positions_At_Pressing_The_Dir_Key = get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(arr_Snake_Parts);
 
             set_Position_Of_All_Snake_Body_After_Pressing_The_Dir_Key(
                 arr_Snake_Parts,
@@ -29,7 +29,7 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
                 );
         }
         //--------------------------------------------------------------------------------
-        private Dictionary<string, int> get_Position_Of_All_Snake_Body_At_Pressing_Any_Dir_Key(UIElement[] arr_Snake_Parts)
+        private Dictionary<string, int> get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(UIElement[] arr_Snake_Parts)
         {
             Dictionary<string, int> dic_Positions_At_Pres_Dire = new Dictionary<string, int>();
 
@@ -170,6 +170,6 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
 
             return next_Step_For_Snake_Head;
         }
-        //-------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------
     }
 }

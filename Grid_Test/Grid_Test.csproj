@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="_1_Managers\" />
+    <Folder Include="emptu\" />
   </ItemGroup>
 
 </Project>

@@ -26,6 +26,7 @@ namespace Grid_Test
 
     public partial class MainWindow : Window
     {
+        
         bool goUp;
         bool goDown;
         bool goLeft;
