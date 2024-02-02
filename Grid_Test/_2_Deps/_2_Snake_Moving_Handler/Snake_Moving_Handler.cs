@@ -9,7 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using Grid_Test._Globals;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
 
-namespace Grid_Test._3_Deps._2_Snake_Moving_Handler
+namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
 {
     internal class Snake_Moving_Handler
     {

@@ -1,4 +1,4 @@
-﻿using Grid_Test._3_Deps._2_Snake_Moving_Handler;
+﻿using Grid_Test._2_Deps._2_Snake_Moving_Handler;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
 using System.Reflection.Emit;
 using System.Text;

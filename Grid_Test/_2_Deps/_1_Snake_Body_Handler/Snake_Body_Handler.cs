@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Grid_Test._3_Deps._1_Snake_Body_Handler
+namespace Grid_Test._2_Deps._1_Snake_Body_Handler
 
 {
     class Snake_Body_Handler
