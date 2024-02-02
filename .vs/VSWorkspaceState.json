@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Grid_Test",
+    "\\Grid_Test\\My_Libs\\My_Lib_1"
   ],
-  "SelectedNode": "\\My_Snake_Game.sln",
+  "SelectedNode": "\\Grid_Test\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

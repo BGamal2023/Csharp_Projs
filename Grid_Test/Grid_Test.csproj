@@ -9,13 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Awaad_Project\Awaad_Project.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="0_Main\" />
-    <Folder Include="1_Deps\" />
-    <Folder Include="_Globals\" />
+    <Folder Include="_1_Managers\" />
   </ItemGroup>
 
 </Project>

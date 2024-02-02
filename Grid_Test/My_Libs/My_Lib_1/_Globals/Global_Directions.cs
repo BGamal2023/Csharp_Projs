@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Awaad_Project.Globals
+namespace Grid_Test.My_Libs.My_Lib_1.Globals
 {
     internal class Global_Directions
     {
@@ -12,5 +12,9 @@ namespace Awaad_Project.Globals
         public static bool goDown;
         public static bool goLeft;
         public static bool goRight;
+        public static string str_goRight = "goRight";
+        public static string str_goLeft = "goLeft";
+        public static string str_goUp = "goUp";
+        public static string str_goDown = "goDown";
     }
 }
