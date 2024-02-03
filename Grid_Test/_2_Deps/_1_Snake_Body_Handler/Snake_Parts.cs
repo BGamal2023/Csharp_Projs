@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Awaad_Project._0_Draw_The_Snake
+namespace Grid_Test._2_Deps._1_Snake_Body_Handler
 {
     internal class Snake_Parts
     {
