@@ -23,6 +23,29 @@ namespace Grid_Test._1_Managers
              
 
         }
+        //---------------------------------------------------------------
+        public void draw_The_Snake()
+        {
+
+            if (obj_Snake_Body_Handler.list == 0)
+            {
+                obj_Snake_Body_Handler.list_Of_The_snake_Body.Add(
+                    new Rectangle()
+                    {
+                        Fill = Brushes.Red,
+                        Stroke = new SolidColorBrush(Colors.Black)
+
+                    });
+            }
+            else
+            {
+                for (int i = 0; i < obj_Snake_Body_Handler.list_Of_The_snake_Body.Count; i++)
+                {
+
+                }
+            }
+
+        }
         //-----------------------------------------------------------------
         public void move_Control_And_Monitor_Snake_Status(){
             move_The_Snake();
@@ -38,26 +61,12 @@ namespace Grid_Test._1_Managers
 
         }
 
-        public void draw_The_Snake() {
-            
-            if(obj_Snake_Body_Handler.list_Of_The_snake_Body.Count==0){
-                obj_Snake_Body_Handler.list_Of_The_snake_Body.Add(
-                    new Rectangle(){
-                            Fill=Brushes.Red,
-                 Stroke = new SolidColorBrush(Colors.Black)
-
-                });
-            }else{
-                for(int i=0 ;i<obj_Snake_Body_Handler.list_Of_The_snake_Body.Count)
-            }
-
-         }
+      
         //---------------------------------------------------------------
         public void move_The_Snake() { 
 
 
-            _1_Snake_Body_Handler 
-            List<UIElement> list_Snake_Parts = new List<UIElement>()
+             List<UIElement> list_Snake_Parts = new List<UIElement>()
             {
                 Head, body1, body2, body3, body4, body5, body6, body7
             };

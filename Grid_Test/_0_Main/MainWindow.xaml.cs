@@ -1,4 +1,5 @@
-﻿using Grid_Test._2_Deps._2_Snake_Moving_Handler;
+﻿using Grid_Test._1_Managers;
+using Grid_Test._2_Deps._2_Snake_Moving_Handler;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
 using System.Reflection.Emit;
 using System.Text;
@@ -39,6 +40,9 @@ namespace Grid_Test
         Dictionary<String, int> dic_Positions_At_Pres_Down = new Dictionary<string, int>();
         Snake_Moving_Handler obj_Control_The_Snake_Moving=new Snake_Moving_Handler();
         Dictionary<string, int> dic_Positions_At_Pres_Dire=new Dictionary<string, int>();
+        //--------------------------------------------------------------------------------------------------
+
+        General_Manager obj_General_Manager=new General_Manager();
 
 
 
@@ -49,6 +53,9 @@ namespace Grid_Test
         {
             InitializeComponent();
             gameArea.Focus();
+
+            obj_General_Manager.start_The_Game();
+
             myTimer.Tick += timer_Tick_Callback;
             myTimer.Interval = TimeSpan.FromMilliseconds(500);
             myTimer.Start();
@@ -59,7 +66,8 @@ namespace Grid_Test
 
         private void timer_Tick_Callback(object? sender, EventArgs e)
         {
-           
+
+            obj_General_Manager.move_Control_And_Monitor_Snake_Status();
             
             draw_The_Snake_V2();
 
@@ -398,7 +406,6 @@ namespace Grid_Test
         }
 
         //---------------------------------------------------------------------
-        //------------------------------------------------------------------------
 
         private int get_Col_Pos(UIElement one_Snake_Part)
         {
