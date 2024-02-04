@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Folder Include="emptu\" />
+    <Folder Include="_2_Deps\_6_Player_Life_Handler\" />
+    <Folder Include="_2_Deps\_5_Game_Levels_Handler\" />
   </ItemGroup>
 
 </Project>

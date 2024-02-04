@@ -8,6 +8,7 @@ using System.Windows;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using Grid_Test.__Globals;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
+using Grid_Test._2_Deps._1_Snake_Body_Handler;
 
 namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
 {
@@ -15,128 +16,128 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
     {
         Globals globals = new Globals();
         //----------------------------------------------------------------------------
-        public void move_Snake_To_Selected_Direction(List<UIElement>list_snake_Body_Parts, string selected_Direction)
+        public void move_Snake_To_Selected_Direction(List<Snake_Parts> list_Snake_Parts, string selected_Direction)
         {
             Dictionary<string, int> recs_Positions_At_Pressing_The_Dir_Key = new Dictionary<string, int>();
 
-            recs_Positions_At_Pressing_The_Dir_Key = get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(list_snake_Body_Parts);
+            recs_Positions_At_Pressing_The_Dir_Key = get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(list_Snake_Parts);
 
             set_Position_Of_All_Snake_Body_After_Pressing_The_Dir_Key(
-                list_snake_Body_Parts,
+                list_Snake_Parts,
                recs_Positions_At_Pressing_The_Dir_Key,
                 detect_Next_Step_For_Snake_Head(recs_Positions_At_Pressing_The_Dir_Key, selected_Direction),
                 selected_Direction
                 );
         }
         //--------------------------------------------------------------------------------
-        private Dictionary<string, int> get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(List<UIElement>list_snake_Body_Parts)
+        private Dictionary<string, int> get_Position_Of_All_Snake_Body_At_Pressing_The_Dir_Key(List<Snake_Parts> list_Snake_Parts)
         {
             Dictionary<string, int> dic_Positions_At_Pres_Dire = new Dictionary<string, int>();
 
             dic_Positions_At_Pres_Dire.Clear();
 
 
-            for (int i = 0; i < list_snake_Body_Parts.Count; i++)
+            for (int i = 0; i < list_Snake_Parts.Count; i++)
             {
-                dic_Positions_At_Pres_Dire.Add(globals.key_Col_Body_ + i, Grid.GetColumn(list_snake_Body_Parts[i]));
-                dic_Positions_At_Pres_Dire.Add(globals.key_Row_Body_ + i, Grid.GetRow(list_snake_Body_Parts[i]));
+                dic_Positions_At_Pres_Dire.Add(globals.key_Col_Body_ + i, Grid.GetColumn(list_Snake_Parts[i].uiElement));
+                dic_Positions_At_Pres_Dire.Add(globals.key_Row_Body_ + i, Grid.GetRow(list_Snake_Parts[i].uiElement));
             }
 
             return dic_Positions_At_Pres_Dire;
         }
         //-------------------------------------------------------------------------------------------
-        private void set_Position_Of_All_Snake_Body_After_Pressing_The_Dir_Key(List<UIElement>list_snake_Body_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head, string selected_Direction)
+        private void set_Position_Of_All_Snake_Body_After_Pressing_The_Dir_Key(List<Snake_Parts> list_Snake_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head, string selected_Direction)
         {
 
             //! changed from Globals.go_Right .......to str_goRight
 
             if (selected_Direction == Global_Directions.str_goRight)
             {
-                move_Snake_To_Right_Direction(list_snake_Body_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head); ;
+                move_Snake_To_Right_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head); ;
             }
             else if (selected_Direction == Global_Directions.str_goLeft)
             {
-                move_Snake_To_Left_Direction(list_snake_Body_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+                move_Snake_To_Left_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
             }
             else if (selected_Direction == Global_Directions.str_goUp)
             {
-                move_Snake_To_Up_Direction(list_snake_Body_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+                move_Snake_To_Up_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
             }
             else if (selected_Direction == Global_Directions.str_goDown)
             {
-                move_Snake_To_Down_Direction(list_snake_Body_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+                move_Snake_To_Down_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
             }
 
         }
         //-------------------------------------------------------------------------------------------
-        private void move_Snake_To_Down_Direction(List<UIElement>list_snake_Body_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
+        private void move_Snake_To_Down_Direction(List<Snake_Parts> list_Snake_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
         {
 
-            for (int i = 0; i < list_snake_Body_Parts.Count; i++)
+            for (int i = 0; i < list_Snake_Parts.Count; i++)
             {
                 if (i == 0)
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + i]);
-                    Grid.SetRow(list_snake_Body_Parts[i], next_Col_For_Snake_Head);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Col_Body_ + i]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, next_Col_For_Snake_Head);
                 }
                 else
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
                 }
 
             }
         }
         //------------------------------------------------------------------------------------------
-        private void move_Snake_To_Up_Direction(List<UIElement>list_snake_Body_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
+        private void move_Snake_To_Up_Direction(List<Snake_Parts> list_Snake_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
         {
-            for (int i = 0; i < list_snake_Body_Parts.Count; i++)
+            for (int i = 0; i < list_Snake_Parts.Count; i++)
             {
                 if (i == 0)
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + i]);
-                    Grid.SetRow(list_snake_Body_Parts[i], next_Col_For_Snake_Head);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement , dic_Positions_At_Pres_Left[globals.key_Col_Body_ + i]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, next_Col_For_Snake_Head);
                 }
                 else
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement  , dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
                 }
 
             }
         }
         //-------------------------------------------------------------------------------------------
-        private void move_Snake_To_Left_Direction(List<UIElement>list_snake_Body_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
+        private void move_Snake_To_Left_Direction(List<Snake_Parts> list_Snake_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
         {
-            for (int i = 0; i < list_snake_Body_Parts.Count; i++)
+            for (int i = 0; i < list_Snake_Parts.Count; i++)
             {
                 if (i == 0)
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], next_Col_For_Snake_Head);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + i]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, next_Col_For_Snake_Head);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Row_Body_ + i]);
                 }
                 else
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
                 }
 
             }
         }
         //-------------------------------------------------------------------------------------------
-        private void move_Snake_To_Right_Direction(List<UIElement>list_snake_Body_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
+        private void move_Snake_To_Right_Direction(List<Snake_Parts> list_Snake_Parts, Dictionary<string, int> dic_Positions_At_Pres_Left, int next_Col_For_Snake_Head)
         {
-            for (int i = 0; i < list_snake_Body_Parts.Count; i++)
+            for (int i = 0; i < list_Snake_Parts.Count; i++)
             {
                 if (i == 0)
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], next_Col_For_Snake_Head);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + i]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, next_Col_For_Snake_Head);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Row_Body_ + i]);
                 }
                 else
                 {
-                    Grid.SetColumn(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
-                    Grid.SetRow(list_snake_Body_Parts[i], dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
+                    Grid.SetColumn(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Col_Body_ + (i - 1)]);
+                    Grid.SetRow(list_Snake_Parts[i].uiElement, dic_Positions_At_Pres_Left[globals.key_Row_Body_ + (i - 1)]);
                 }
 
             }
@@ -150,22 +151,38 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
             {
                 next_Step_For_Snake_Head =
                     dic_Positions_At_Pres_Dire[globals.key_Col_Body_ + "0"] + 1;
+                if (next_Step_For_Snake_Head > 26)
+                {
+                    next_Step_For_Snake_Head = 0;
+                }
 
             }
             else if (selected_Direction == Global_Directions.str_goLeft)
             {
                 next_Step_For_Snake_Head =
                     dic_Positions_At_Pres_Dire[globals.key_Col_Body_ + "0"] - 1;
+                if (next_Step_For_Snake_Head < 0)
+                {
+                    next_Step_For_Snake_Head = 26;
+                }
             }
             else if (selected_Direction == Global_Directions.str_goUp)
             {
                 next_Step_For_Snake_Head =
                     dic_Positions_At_Pres_Dire[globals.key_Row_Body_ + "0"] - 1;
+                if (next_Step_For_Snake_Head < 0)
+                {
+                    next_Step_For_Snake_Head=Globals.No_Of_gameArea_Rows;
+                }
             }
             else if (selected_Direction == Global_Directions.str_goDown)
             {
                 next_Step_For_Snake_Head =
                          dic_Positions_At_Pres_Dire[globals.key_Row_Body_ + "0"] + 1;
+                if (next_Step_For_Snake_Head > Globals.No_Of_gameArea_Rows)
+                {
+                    next_Step_For_Snake_Head = 0;
+                }
             }
 
             return next_Step_For_Snake_Head;

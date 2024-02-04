@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Grid_Test"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="700">
-    <Grid Name="gameArea" ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
+   
+    <Grid Name="gameArea"  ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -70,16 +71,11 @@
 
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Rectangle Name="Head" Fill="Red" Grid.Column="9" Grid.Row="3" Stroke="Black"> </Rectangle>
-        <Rectangle Name="body1" Fill="Green" Stroke="Black" />
-        <Rectangle Name="body2" Fill="Green" Stroke="Black"/>
-        <Rectangle Name="body3" Fill="Green" Stroke="Black"/>
-        <Rectangle Name="body4" Fill="Green" Stroke="Black"/>
-        <Rectangle Name="body5" Fill="Green" Stroke="Black"/>
-        <Rectangle Name="body6" Fill="Green" Stroke="Black"/>
-        <Rectangle Name="body7" Fill="Green" Stroke="Black"/>
+      
+        <Label Name="current_Col" Grid.ColumnSpan="3" Background="white" Grid.Row="0" Grid.Column="2" Content="Label"/>
+        <Label Name="current_Row" Background="Wheat" Grid.Row="0" Grid.Column="22" Content="Label"/>
+       
 
-        <Label Name="mylabel" Grid.Row="0" Grid.Column="8" Content="Label"/>
     </Grid>
     
 </Window>
