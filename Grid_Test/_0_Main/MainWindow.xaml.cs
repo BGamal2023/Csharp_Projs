@@ -43,7 +43,6 @@ namespace Grid_Test
 
             obj_General_Manager.start_The_Game(gameArea);
             obj_General_Manager.move_Control_And_Monitor_Snake_Status(myTimer,gameArea);
-           current_Col.Content = Globals.isDeadCollisionOccurued;
 
 
 

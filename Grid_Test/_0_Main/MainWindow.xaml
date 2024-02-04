@@ -6,76 +6,59 @@
         xmlns:local="clr-namespace:Grid_Test"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="700">
-   
-    <Grid Name="gameArea"  ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+    <DockPanel LastChildFill="True">
+        <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
 
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-      
-        <Label Name="current_Col" Grid.ColumnSpan="3" Background="white" Grid.Row="0" Grid.Column="2" Content="Label"/>
-        <Label Name="current_Row" Background="Wheat" Grid.Row="0" Grid.Column="22" Content="Label"/>
-       
+            <Grid.RowDefinitions>
+               
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
 
-    </Grid>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+        </Grid>
+        <Grid x:Name="infoArea" DockPanel.Dock="Top" Height="100" Background="Aqua"/>
+    </DockPanel>
     
 </Window>

@@ -20,8 +20,8 @@ namespace Grid_Test.__Globals
         public static List<Snake_Food> list_Snake_Food=new List<Snake_Food>();
         public static int gameArea_MaxWidth=700;
         public static int gameArea_MaxHeight = 700;
-        public static int No_Of_gameArea_Cols=26;
-        public static int No_Of_gameArea_Rows=27;
+        public static int No_Of_gameArea_Cols=18;
+        public static int No_Of_gameArea_Rows=18;
         public static bool isFoodCollisionOccurred = false;
         public static bool isDeadCollisionOccurued=false;
         public static int gameSpeed = 400;
