@@ -29,6 +29,7 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
             if(curCol_SnakeHead==curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
             {
                 Globals.isFoodCollisionOccurred = true;
+                Globals.Score++;
             }
 
         }

@@ -32,7 +32,6 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
                     )
                 {
                     Globals.isDeadCollisionOccurued = true;
-                    Globals.collisionRec = Globals.list_Snake_Parts[i].uiElement;      
                 }
 
             }

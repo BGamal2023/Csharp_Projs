@@ -10,7 +10,15 @@
         <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
 
             <Grid.ColumnDefinitions>
-                
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -33,7 +41,15 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-               
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -58,7 +74,66 @@
 
 
         </Grid>
-        <Grid x:Name="infoArea" DockPanel.Dock="Top" Height="100" Background="Aqua"/>
+        <Grid x:Name="infoArea" DockPanel.Dock="Top" Height="72" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label 
+                Name="Score"
+                Content="Score" Grid.Row="0" 
+                FontSize="15" 
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"/>
+            <Label Name="Live" 
+                   Content="Player_Live"  
+                   FontSize="15" Grid.ColumnSpan="2"
+                   Grid.Row="0" Grid.Column="3"
+                    HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"/>
+            <Label Name="Level" 
+                   Content="Level" 
+                   FontSize="15" 
+                   Grid.Row="0" Grid.Column="7"
+                    HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"/>
+            
+            <Label Name="Score_Value" 
+                   Grid.Column="1"
+                   Grid.Row="0" 
+                    Background="Bisque"
+                   FontStyle="Italic"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"/>
+            <Label Name="player_Healthy" 
+                Grid.Column="5"
+                   Grid.Row="0" 
+                    Background="Bisque"
+                FontStyle="Italic"
+                HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"/>
+            <Label Name="level_value" 
+                Grid.Column="8"
+                FontStyle="Italic"
+                   Background="Bisque"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"/>
+            
+        </Grid>
     </DockPanel>
     
 </Window>

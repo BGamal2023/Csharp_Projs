@@ -40,14 +40,16 @@ namespace Grid_Test
             InitializeComponent();
             gameArea.Focus();
            
+           
 
             obj_General_Manager.start_The_Game(gameArea);
-            obj_General_Manager.move_Control_And_Monitor_Snake_Status(myTimer,gameArea);
-
-
-
-
-
+            obj_General_Manager.move_Control_And_Monitor_Snake_Status(
+                                                  myTimer,
+                                                  gameArea,
+                                                  Score_Value,
+                                                  player_Healthy,
+                                                  level_value
+                                                 );
 
         }
 

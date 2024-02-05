@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration.Assemblies;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,12 +11,17 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Reflection.Emit;
 using Grid_Test.__Globals;
 using Grid_Test._2_Deps._1_Snake_Body_Handler;
 using Grid_Test._2_Deps._2_Snake_Moving_Handler;
 using Grid_Test._2_Deps._3_Snake_Food_Handler;
 using Grid_Test._2_Deps._4_Collision_Handler;
+using Grid_Test._2_Deps._7_Player_Score_Handler;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
+using Label = System.Windows.Controls.Label;
+using Grid_Test._2_Deps._5_Game_Levels_Handler;
+
 
 namespace Grid_Test._1_Managers
 
@@ -29,9 +33,9 @@ namespace Grid_Test._1_Managers
         Snake_Food_Handler obj_Snake_Food_Handler=new Snake_Food_Handler();
         Food_Collision_Handler obj_Food_Collision_Handler=new Food_Collision_Handler();
         Dead_Collision_Handler obj_Dead_Collision_Handler=new Dead_Collision_Handler();
-
+        Score_Handler obj_Score_Handler=new Score_Handler();
+        Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler(); 
         //---------------------------------------------------------------
-
         public void start_The_Game(Grid gameArea)
         {
                 draw_The_Snake(gameArea);
@@ -40,23 +44,45 @@ namespace Grid_Test._1_Managers
 
         }
         //---------------------------------------------------------------
-        public void move_Control_And_Monitor_Snake_Status(DispatcherTimer gameTimer,Grid gameArea)
+        public void move_Control_And_Monitor_Snake_Status(
+            DispatcherTimer gameTimer,
+            Grid gameArea,
+            Label scoreValue,
+            Label playerHealth,
+            Label level)
         {
-            gameTimer.Tick += (sender, e) => { timer_Tick_Callback(sender, e, gameArea,gameTimer); };
+            gameTimer.Tick += (sender, e) =>
+            {
+                timer_Tick_Callback(
+                sender, e, gameArea, gameTimer, scoreValue,playerHealth,level);
+            };
             gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.gameSpeed);
             gameTimer.Start();
+
+    
         
         }
-
-        private void timer_Tick_Callback(object? sender, EventArgs e, Grid gameArea,DispatcherTimer gameTimer)
+        //---------------------------------------------------------------
+        private void timer_Tick_Callback(
+            object? sender, 
+            EventArgs e, 
+            Grid gameArea,
+            DispatcherTimer gameTimer, 
+            Label scoreValue,
+            Label playerHealth,
+            Label level
+            )
         {
             check_Dead_Collision(gameTimer);
             move_The_Snake();
-            check_Food_Collision();
             feed_The_Snake(gameArea);
-          
-        }
+            check_Food_Collision();
+            update_Player_Score( scoreValue);
+            update_Player_Healthy(playerHealth);
+            update_The_Game_Level(level,gameTimer);
 
+
+        }
         //-----------------------------------------------------------------
         public void draw_The_Snake(Grid gameArea)
         {
@@ -95,41 +121,7 @@ namespace Grid_Test._1_Managers
                   Globals.list_Snake_Parts, Global_Directions.str_goRight);
             }
 
-
-        
-                    
-
-           /* List<UIElement> list_Snake_Parts = new List<UIElement>()
-            {
-                Head, body1, body2, body3, body4, body5, body6, body7
-            };*/
-
-
-           /* if (goRight)
-            {
-                obj_Control_The_Snake_Moving.move_Snake_To_Selected_Direction(arr_Snake_Parts, Global_Directions.str_goRight);
-            }
-            else if (goLeft)
-            {
-                obj_Control_The_Snake_Moving.move_Snake_To_Selected_Direction(arr_Snake_Parts, Global_Directions.str_goLeft);
-
-            }
-
-            else if (goUp)
-            {
-                obj_Control_The_Snake_Moving.move_Snake_To_Selected_Direction(arr_Snake_Parts, Global_Directions.str_goUp);
-
-            }
-            else if (goDown)
-            {
-                obj_Control_The_Snake_Moving.move_Snake_To_Selected_Direction(arr_Snake_Parts, Global_Directions.str_goDown);
-
-            }
-            else
-            {
-
-
-            }*/
+       
         }
         //----------------------------------------------------------------
         public void check_Food_Collision()
@@ -148,7 +140,6 @@ namespace Grid_Test._1_Managers
             }
         }
         //----------------------------------------------------------------
-        //----------------------------------------------------------------
         public void check_Dead_Collision(DispatcherTimer gameTimer)
         {
 
@@ -162,16 +153,33 @@ namespace Grid_Test._1_Managers
         {
             if (Globals.isDeadCollisionOccurued == true)
             {
-                Globals.playerLife--;
-                
+                Globals.playerHealth--;
+                Globals.isDeadCollisionOccurued =false;
             }
 
-            if (Globals.playerLife == 0)
+            if (Globals.playerHealth == 0)
             {
-                gameTimer.Stop();   
+                gameTimer.Stop();
+                MessageBox.Show("Game Over");
             }
         }
+        //-------------------------------------------------------------------
+        public void update_Player_Score(Label scoreValue)
+        {
+            obj_Score_Handler.update_Player_Sore(scoreValue);
+        }
+        //---------------------------------------------------------------
+        public void update_Player_Healthy(Label player_Healthy)
+        {
+            player_Healthy.Content = Globals.playerHealth;
+        }
+        //---------------------------------------------------------------
+        public void update_The_Game_Level(Label levelValue,DispatcherTimer gameTimer)
+        {
+            levelValue.Content = Globals.Level;
 
+            obj_Game_Level_Handler.update_Game_Level(gameTimer);
+        }
 
 
     }

@@ -56,10 +56,8 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             snake_Part.left_Position = get_The_Left_Of_Last_Snake_Part() - Snake_Parts.snake_Width;
             snake_Part.top_Position = get_The_Top_Of_Last_Snake_Part();
 
-            gameArea.Children.Add(snake_Part.uiElement);
             Globals.list_Snake_Parts.Add(snake_Part);
-                
-            
+            gameArea.Children.Add(snake_Part.uiElement);
            
         }
         //------------------------------------------------------------------------------------
