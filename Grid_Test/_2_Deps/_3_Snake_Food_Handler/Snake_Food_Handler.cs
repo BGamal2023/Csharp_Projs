@@ -21,8 +21,8 @@ namespace Grid_Test._2_Deps._3_Snake_Food_Handler
             Snake_Food new_Snake_Food= new Snake_Food();
             new_Snake_Food.uiElement = new Rectangle()
             {
-                Width = Snake_Parts.snake_Width,
-                Height = Snake_Parts.snake_Height,
+                Width = Globals.snake_Width,
+                Height = Globals.snake_Height,
                 Fill = Brushes.Aqua,
                 Stroke = Brushes.Black,
                 StrokeThickness = 1

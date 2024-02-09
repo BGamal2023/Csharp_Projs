@@ -1,4 +1,7 @@
 ﻿using Grid_Test.__Globals;
+using Grid_Test._2_Deps._8_Create_Rectangle;
+using Grid_Test.My_Libs.My_Lib_1;
+using Grid_Test.My_Libs.My_Lib_1.Globals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,94 +17,117 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
 {
     class Snake_Body_Handler
     {
-        public Snake_Parts snake_Head=new Snake_Parts();
+        /*public Snake_Body snake_Head=new Snake_Body();*/
+        Creating_Rect obj_Creating_Rect=new Creating_Rect();
        //------------------------------------------------------------------------------------
         public void add_The_Head_Of_The_Snake_To_The_List_Of_Snake_Parts(Grid gameArea)
         {
 
-            snake_Head.uiElement = new Rectangle()
-            {
-                Width = Snake_Parts.snake_Width,
-                Height = Snake_Parts.snake_Height,
-                Fill = Brushes.Red,
-                Stroke= Brushes.Black,
-                StrokeThickness = 1
-
-
-            };
-            snake_Head.left_Position = 100;
-            snake_Head.top_Position = 100;
-
-            gameArea.Children.Add(snake_Head.uiElement);
-            Grid.SetColumn(snake_Head.uiElement, 8);
-            Grid.SetRow(snake_Head.uiElement, 5);
-            
-            Globals.list_Snake_Parts.Add(snake_Head);
-
+            obj_Creating_Rect.create_Rec(gameArea, Globals.snake_Head_Color,
+                                   Globals.snake_Head_X, Globals.snake_Head_Y);
+           
+           
             
         }
         //------------------------------------------------------------------------------------
         public void add_New_Part_To_Body_Of_The_Snake(Grid gameArea)
         {
-                    Snake_Parts snake_Part=new Snake_Parts();
-            snake_Part.uiElement = new Rectangle()
+
+            var last_Snake_Part= Globals.list_Snake_Parts[^1];
+
+            if (Global_Directions.goRight)
             {
-                Width = Snake_Parts.snake_Width,
-                Height = Snake_Parts.snake_Height,
-                Fill = Brushes.Green,
-                Stroke = Brushes.Black,
-                StrokeThickness = 1
 
-                    };
-            snake_Part.left_Position = get_The_Left_Of_Last_Snake_Part() - Snake_Parts.snake_Width;
-            snake_Part.top_Position = get_The_Top_Of_Last_Snake_Part();
-
-            Globals.list_Snake_Parts.Add(snake_Part);
-            gameArea.Children.Add(snake_Part.uiElement);
-           
-        }
-        //------------------------------------------------------------------------------------
-        public double get_The_Left_Of_Last_Snake_Part()
-        {
-            double my_left_Of_Last_Snake_Part=0;
-
-            if (Globals.list_Snake_Parts.Count > 0)
+                add_During_Moving_Right
+                    ( gameArea,Globals.snake_Body_Color,
+                     Grid.GetColumn(last_Snake_Part) - 1,
+                     Grid.GetRow(last_Snake_Part));
+               
+            }
+            else if(Global_Directions.goLeft)
             {
+
+                add_During_Moving_Left(gameArea,
+              Globals.snake_Body_Color,
+              Grid.GetColumn(last_Snake_Part) + 1,
+              Grid.GetRow(last_Snake_Part));
+               
+            }
+            else if(Global_Directions.goUp)
+            {
+                add_During_Moving_UP(
+                    gameArea,
+              Globals.snake_Body_Color,
+              Grid.GetColumn(last_Snake_Part),
+              Grid.GetRow(last_Snake_Part) - 1);
               
-                var lastItem = Globals.list_Snake_Parts[^1];
-                my_left_Of_Last_Snake_Part = lastItem.left_Position;
             }
-           
-
-            return my_left_Of_Last_Snake_Part;
-
-        }
-        //------------------------------------------------------------------------------------
-        public double get_The_Top_Of_Last_Snake_Part()
-        {
-            double my_top_Of_Last_Snake_Part = 0;
-
-
-            if (Globals.list_Snake_Parts.Count > 0)
+            else if (Global_Directions.goDown)
             {
-                var lastItem = Globals.list_Snake_Parts[^1];
-                my_top_Of_Last_Snake_Part = lastItem.top_Position;
+                add_During_Moving_Down(
+                      gameArea,
+              Globals.snake_Body_Color,
+              Grid.GetColumn(last_Snake_Part),
+              Grid.GetRow(last_Snake_Part) + 1);
+              
             }
-                
            
 
-
-            return my_top_Of_Last_Snake_Part;
+           
         }
-     
-        //------------------------------------------------------------------------------------
-        public void add_New_Part_To_The_gameArea(){
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_Down(
+            Grid gameArea,
+            Brush color,
+            int X,
+            int Y)
+        {
+            obj_Creating_Rect.create_Rec(gameArea,
+                color,
+              X,
+              Y);
+           
         }
-        public void draw_The_Snake(){
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_UP(Grid gameArea,
+            Brush color,
+            int X,
+            int Y)
+        {
+            obj_Creating_Rect.create_Rec(gameArea,
+                color,
+              X,
+              Y);
+        }
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_Left(Grid gameArea,
+            Brush color,
+            int X,
+            int Y)
+        {
+
+
+            obj_Creating_Rect.create_Rec(gameArea,
+                color,
+              X,
+              Y);
+        }
+        //---------------------------------------------------------------------------------------
+        private void add_During_Moving_Right(Grid gameArea,
+            Brush color,
+            int X,
+            int Y)
+        {
+
+            obj_Creating_Rect.create_Rec(gameArea,
+                 color,
+               X,
+               Y);
 
         }
-
-
-
+        //---------------------------------------------------------------------------------------
+       
+      
+           
     }
 }

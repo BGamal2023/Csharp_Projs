@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="emptu\" />
+    <Folder Include="Deprecated\" />
     <Folder Include="_2_Deps\_6_Player_Life_Handler\" />
   </ItemGroup>
 

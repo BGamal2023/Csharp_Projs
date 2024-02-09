@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace Grid_Test.__Globals
 {
@@ -16,7 +18,7 @@ namespace Grid_Test.__Globals
         public string key_Col_Body_ = "Col_Position_At_Pressing_For_Body_";
         public string key_Row_Body_ = "Row_Position_At_Pressing_For_Body_";
         public static bool did_A_Collision_Occur=false;
-        public static List<Snake_Parts> list_Snake_Parts=new List<Snake_Parts>();
+        public static List<Rectangle> list_Snake_Parts=new List<Rectangle>();
         public static List<Snake_Food> list_Snake_Food=new List<Snake_Food>();
         public static int gameArea_MaxWidth=700;
         public static int gameArea_MaxHeight = 700;
@@ -26,6 +28,11 @@ namespace Grid_Test.__Globals
         public static bool isDeadCollisionOccurued=false;
         public static int gameSpeed = 200;
         public static UIElement collisionRec;
+        public static int snake_Head_X = 20;
+        public static int snake_Head_Y = 20;
+        public static Brush snake_Head_Color = Brushes.Red;
+        public static Brush snake_Body_Color = Brushes.Green;
+        public static Brush snake_Food_Color = Brushes.Blue;
         public static int Score;
         public static int playerLife;
         public static int playerHealth = 1;
@@ -36,6 +43,8 @@ namespace Grid_Test.__Globals
         public static int level_1_speed = 200;
         public static int level_2_speed = 100;
         public static int level_3_speed = 50;
+        public static int snake_Width = 100;
+        public static int snake_Height = 100;
 
     }
 }
