@@ -19,7 +19,7 @@ namespace Grid_Test.__Globals
         public string key_Row_Body_ = "Row_Position_At_Pressing_For_Body_";
         public static bool did_A_Collision_Occur=false;
         public static List<Rectangle> list_Snake_Parts=new List<Rectangle>();
-        public static List<Snake_Food> list_Snake_Food=new List<Snake_Food>();
+        public static List<Rectangle> list_Snake_Food=new List<Rectangle>();
         public static int gameArea_MaxWidth=700;
         public static int gameArea_MaxHeight = 700;
         public static int No_Of_gameArea_Cols=26;
@@ -32,7 +32,7 @@ namespace Grid_Test.__Globals
         public static int snake_Head_Y = 20;
         public static Brush snake_Head_Color = Brushes.Red;
         public static Brush snake_Body_Color = Brushes.Green;
-        public static Brush snake_Food_Color = Brushes.Blue;
+        public static Brush snake_Food_Color = Brushes.SkyBlue;
         public static int Score;
         public static int playerLife;
         public static int playerHealth = 1;

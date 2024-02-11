@@ -18,7 +18,8 @@ namespace Grid_Test._2_Deps._8_Create_Rectangle
              Grid gameArea,
             Brush color,
             int X,
-            int Y)
+            int Y,
+            List<Rectangle> list)
         {
             Rectangle rec = new Rectangle()
             {
@@ -34,7 +35,7 @@ namespace Grid_Test._2_Deps._8_Create_Rectangle
             Grid.SetColumn(rec, X);
             Grid.SetRow(rec, Y);
 
-            Globals.list_Snake_Parts.Add(rec);
+            list.Add(rec);
 
             return rec;
         }

@@ -17,19 +17,20 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
 {
     class Snake_Body_Handler
     {
-        /*public Snake_Body snake_Head=new Snake_Body();*/
-        Creating_Rect obj_Creating_Rect=new Creating_Rect();
-       //------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------
+        Creating_Rect obj_Creating_Rect =new Creating_Rect();
+        //---------------------------------------------------------------------------------------
         public void add_The_Head_Of_The_Snake_To_The_List_Of_Snake_Parts(Grid gameArea)
         {
 
-            obj_Creating_Rect.create_Rec(gameArea, Globals.snake_Head_Color,
-                                   Globals.snake_Head_X, Globals.snake_Head_Y);
+         obj_Creating_Rect.create_Rec(gameArea, Globals.snake_Head_Color,
+                                   Globals.snake_Head_X, Globals.snake_Head_Y,
+                                   Globals.list_Snake_Parts);
            
            
             
         }
-        //------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------
         public void add_New_Part_To_Body_Of_The_Snake(Grid gameArea)
         {
 
@@ -82,10 +83,11 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             int X,
             int Y)
         {
-            obj_Creating_Rect.create_Rec(gameArea,
+         obj_Creating_Rect.create_Rec(gameArea,
                 color,
               X,
-              Y);
+              Y,
+              Globals.list_Snake_Parts);
            
         }
         //---------------------------------------------------------------------------------------
@@ -94,10 +96,11 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             int X,
             int Y)
         {
-            obj_Creating_Rect.create_Rec(gameArea,
+         obj_Creating_Rect.create_Rec(gameArea,
                 color,
               X,
-              Y);
+              Y,
+              Globals.list_Snake_Parts);
         }
         //---------------------------------------------------------------------------------------
         private void add_During_Moving_Left(Grid gameArea,
@@ -107,10 +110,11 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
         {
 
 
-            obj_Creating_Rect.create_Rec(gameArea,
+         obj_Creating_Rect.create_Rec(gameArea,
                 color,
               X,
-              Y);
+              Y,
+              Globals.list_Snake_Parts);
         }
         //---------------------------------------------------------------------------------------
         private void add_During_Moving_Right(Grid gameArea,
@@ -119,10 +123,11 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             int Y)
         {
 
-            obj_Creating_Rect.create_Rec(gameArea,
+         obj_Creating_Rect.create_Rec(gameArea,
                  color,
                X,
-               Y);
+               Y,
+              Globals.list_Snake_Parts);
 
         }
         //---------------------------------------------------------------------------------------
