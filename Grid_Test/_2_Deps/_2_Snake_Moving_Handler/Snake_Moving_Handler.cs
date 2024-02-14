@@ -54,19 +54,31 @@ namespace Grid_Test._2_Deps._2_Snake_Moving_Handler
 
             if (selected_Direction == Global_Directions.str_goRight)
             {
-                move_Snake_To_Right_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head); ;
+                Globals.currDirection = (int)Globals.En_currentDirection.right;
+                move_Snake_To_Right_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+
+
             }
             else if (selected_Direction == Global_Directions.str_goLeft)
             {
+                Globals.currDirection = (int)Globals.En_currentDirection.left;
+
                 move_Snake_To_Left_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+
             }
             else if (selected_Direction == Global_Directions.str_goUp)
             {
+                Globals.currDirection = (int)Globals.En_currentDirection.up;
+
                 move_Snake_To_Up_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+
             }
             else if (selected_Direction == Global_Directions.str_goDown)
             {
+                Globals.currDirection = (int)Globals.En_currentDirection.down;
+
                 move_Snake_To_Down_Direction(list_Snake_Parts, dic_Positions_At_Pres_Left, next_Col_For_Snake_Head);
+
             }
 
         }

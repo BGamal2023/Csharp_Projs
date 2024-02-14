@@ -16,22 +16,74 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
     {
         public void detect_The_Food_Collision()
         {
+            //---------
             UIElement SnakeHead = Globals.list_Snake_Parts[0];
             UIElement food_Rec = Globals.list_Snake_Food[0];
-
             int curCol_SnakeHead = Grid.GetColumn(SnakeHead);
             int curCol_food_Rec=Grid.GetColumn(food_Rec);
-
             int curRow_SnakeHead=Grid.GetRow(SnakeHead);
             int curRow_food_Rec = Grid.GetRow(food_Rec);
-
-
-            if(curCol_SnakeHead==curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+            //---------
+            detect_The_Food_Collision_In_Right_Dir(curCol_SnakeHead, curCol_food_Rec,curRow_SnakeHead,curRow_food_Rec);
+            //---------
+            detect_The_Food_Collision_In_Left_Dir(curCol_SnakeHead, curCol_food_Rec, curRow_SnakeHead, curRow_food_Rec);
+            //---------
+            detect_The_Food_Collision_In_Up_Dir(curCol_SnakeHead, curCol_food_Rec, curRow_SnakeHead, curRow_food_Rec);
+            //---------
+            detect_The_Food_Collision_In_Down_Dir(curCol_SnakeHead, curCol_food_Rec, curRow_SnakeHead, curRow_food_Rec);
+/*
+            if (curCol_SnakeHead==curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
             {
                 Globals.isFoodCollisionOccurred = true;
                 Globals.Score++;
+            }*/
+
+        }
+        //----------------------------------------------------------------------------------------------------------------------
+        private void detect_The_Food_Collision_In_Right_Dir(int curCol_SnakeHead,int curCol_food_Rec,int curRow_SnakeHead, int curRow_food_Rec) {
+            if (Globals.currDirection == (int)Globals.En_currentDirection.right)
+            {
+                if (curCol_SnakeHead + 1 == curCol_food_Rec && curRow_SnakeHead==curRow_food_Rec)
+                {
+                    Globals.isFoodCollisionOccurred = true;
+                    Globals.Score++;
+                }
             }
 
+        }
+        //----------------------------------------------------------------------------------------------------------------------
+        private void detect_The_Food_Collision_In_Left_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
+            if (Globals.currDirection == (int)Globals.En_currentDirection.left)
+            {
+                if (curCol_SnakeHead - 1 == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+                {
+                    Globals.isFoodCollisionOccurred = true;
+                    Globals.Score++;
+                }
+            }
+        }
+        //----------------------------------------------------------------------------------------------------------------------
+        private void detect_The_Food_Collision_In_Up_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
+            if (Globals.currDirection == (int)Globals.En_currentDirection.up)
+            {
+                if (curRow_SnakeHead - 1 == curRow_food_Rec&& curCol_SnakeHead==curCol_food_Rec)
+                {
+                    Globals.isFoodCollisionOccurred = true;
+                    Globals.Score++;
+                }
+            }
+        }
+        //----------------------------------------------------------------------------------------------------------------------
+        private void detect_The_Food_Collision_In_Down_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
+
+            if (Globals.currDirection == (int)Globals.En_currentDirection.down )
+            {
+                if (curRow_SnakeHead + 1 == curRow_food_Rec&&curCol_SnakeHead == curCol_food_Rec)
+                {
+                    Globals.isFoodCollisionOccurred = true;
+                    Globals.Score++;
+                }
+            }
         }
     }
 }

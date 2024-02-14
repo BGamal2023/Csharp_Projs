@@ -16,7 +16,7 @@ namespace Grid_Test._2_Deps._3_Snake_Food_Handler
     {
         Creating_Rect obj_Creating_Rect = new Creating_Rect();
         //-------------------------------------------------------------------------
-        public void add_Snake_Food(Grid gameArea)
+        public void add_The_First_Snake_Food_To_The_gameArea(Grid gameArea)
         {
 
             //!bug #10 prevent the food to appear in positions of snake body.

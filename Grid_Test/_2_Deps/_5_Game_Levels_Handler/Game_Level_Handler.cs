@@ -15,23 +15,23 @@ namespace Grid_Test._2_Deps._5_Game_Levels_Handler
             if (Globals.list_Snake_Parts.Count == Globals.Score_Level_1)
             {
                 Globals.Level = 1;
-                Globals.gameSpeed = Globals.level_1_speed;
+                Globals.timerTick = Globals.level_1_speed;
 
-                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.gameSpeed);
+                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
 
             }
             else if (Globals.list_Snake_Parts.Count == Globals.Score_Level_2)
             {
                 Globals.Level = 2;
-                Globals.gameSpeed = Globals.level_2_speed;
-                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.gameSpeed);
+                Globals.timerTick = Globals.level_2_speed;
+                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
 
             }
             else if (Globals.list_Snake_Parts.Count == Globals.Score_Level_3)
             {
                 Globals.Level = 3;
-                Globals.gameSpeed = Globals.level_3_speed;
-                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.gameSpeed);
+                Globals.timerTick = Globals.level_3_speed;
+                gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
 
             }
         }

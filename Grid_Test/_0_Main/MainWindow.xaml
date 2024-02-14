@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="700">
     <DockPanel LastChildFill="True">
-        <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="IsKeyDown" Focusable="True" >
+        <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="handle_The_Keys_Strokes" Focusable="True" >
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

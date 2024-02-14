@@ -26,7 +26,7 @@ namespace Grid_Test.__Globals
         public static int No_Of_gameArea_Rows=27;
         public static bool isFoodCollisionOccurred = false;
         public static bool isDeadCollisionOccurued=false;
-        public static int gameSpeed = 200;
+        public static int timerTick = 500;
         public static UIElement collisionRec;
         public static int snake_Head_X = 20;
         public static int snake_Head_Y = 20;
@@ -45,6 +45,11 @@ namespace Grid_Test.__Globals
         public static int level_3_speed = 50;
         public static int snake_Width = 100;
         public static int snake_Height = 100;
+        public static int currDirection = 0;
+        public enum En_currentDirection
+        {
+            right=0, left=1, up=2, down=3
+        }
 
     }
 }

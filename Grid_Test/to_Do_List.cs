@@ -3,14 +3,12 @@ namespace Grid_Test
 {
     internal class to_Do_List
     {
-       /*
+
+
         
-        1- adjust moving code logic 
-        2- snake body one method create rect for all types (head , body , food)
-       
-        
-        
-        
-        */
+        /*
+         3- no. of col and rows in the grid should be dynamic 
+        4- protection againest food not appear in snake body.
+         */
     }
 }

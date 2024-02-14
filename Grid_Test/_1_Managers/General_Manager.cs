@@ -38,30 +38,44 @@ namespace Grid_Test._1_Managers
         //---------------------------------------------------------------
         public void start_The_Game(Grid gameArea)
         {
-                draw_The_Snake(gameArea);
-               obj_Snake_Food_Handler.add_Snake_Food(gameArea);
+                add_The_Snake_Head_To_The_gameArea(gameArea);
+               obj_Snake_Food_Handler.add_The_First_Snake_Food_To_The_gameArea(gameArea);
              
 
         }
         //---------------------------------------------------------------
-        public void move_Control_And_Monitor_Snake_Status(
+        public void handle_The_Snake_In_The_gameArea(
             DispatcherTimer gameTimer,
             Grid gameArea,
             Label scoreValue,
             Label playerHealth,
             Label level)
         {
-            gameTimer.Tick += (sender, e) =>
-            {
-                timer_Tick_Callback(
-                sender, e, gameArea, gameTimer, scoreValue,playerHealth,level);
-            };
-            gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.gameSpeed);
-            gameTimer.Start();
+
+            start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea,scoreValue,playerHealth,level);
+         
 
     
         
         }
+
+        private void start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(
+             DispatcherTimer gameTimer,
+            Grid gameArea,
+            Label scoreValue,
+            Label playerHealth,
+            Label level
+            )
+        {
+            gameTimer.Tick += (sender, e) =>
+            {
+                timer_Tick_Callback(
+                sender, e, gameArea, gameTimer, scoreValue, playerHealth, level);
+            };
+            gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
+            gameTimer.Start();
+        }
+
         //---------------------------------------------------------------
         private void timer_Tick_Callback(
             object? sender, 
@@ -73,7 +87,7 @@ namespace Grid_Test._1_Managers
             Label level
             )
         {
-            check_Dead_Collision(gameTimer);
+           check_Dead_Collision(gameTimer);
             move_The_Snake();
             feed_The_Snake(gameArea);
             check_Food_Collision();
@@ -84,7 +98,7 @@ namespace Grid_Test._1_Managers
 
         }
         //-----------------------------------------------------------------
-        public void draw_The_Snake(Grid gameArea)
+        public void add_The_Snake_Head_To_The_gameArea(Grid gameArea)
         {
             obj_Snake_Body_Handler.add_The_Head_Of_The_Snake_To_The_List_Of_Snake_Parts(
                 gameArea);
@@ -135,7 +149,7 @@ namespace Grid_Test._1_Managers
             {
                 obj_Snake_Food_Handler.eat_Snake_Food(gameArea);
                 obj_Snake_Body_Handler.add_New_Part_To_Body_Of_The_Snake(gameArea);
-                obj_Snake_Food_Handler.add_Snake_Food(gameArea);
+                obj_Snake_Food_Handler.add_The_First_Snake_Food_To_The_gameArea(gameArea);
                 Globals.isFoodCollisionOccurred = false;
             }
         }

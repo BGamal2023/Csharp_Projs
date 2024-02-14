@@ -29,31 +29,23 @@ namespace Grid_Test
 
     public partial class MainWindow : Window
     {
+        //--------------------------------------------------------------------------------------------------------------------------------
         General_Manager obj_General_Manager = new General_Manager();
         Key_Strokes_Handler obj_Key_Strokes_Handler=new Key_Strokes_Handler();
         DispatcherTimer myTimer=new DispatcherTimer();
-
-
-
+        //--------------------------------------------------------------------------------------------------------------------------------
         public MainWindow()
         {
+            //------------------
             InitializeComponent();
             gameArea.Focus();
-           
-           
-
+            //------------------
             obj_General_Manager.start_The_Game(gameArea);
-            obj_General_Manager.move_Control_And_Monitor_Snake_Status(
-                                                  myTimer,
-                                                  gameArea,
-                                                  Score_Value,
-                                                  player_Healthy,
-                                                  level_value
-                                                 );
-
+            obj_General_Manager.handle_The_Snake_In_The_gameArea( myTimer, gameArea,Score_Value, player_Healthy,level_value );
+            //------------------
         }
-
-        private void IsKeyDown(object sender, KeyEventArgs e)
+        //--------------------------------------------------------------------------------------------------------------------------------
+        private void handle_The_Keys_Strokes(object sender, KeyEventArgs e)
         {
           obj_Key_Strokes_Handler.handle_The_Keys_Strokes(e);
         }
