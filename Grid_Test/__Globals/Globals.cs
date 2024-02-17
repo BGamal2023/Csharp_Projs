@@ -18,12 +18,10 @@ namespace Grid_Test.__Globals
         public string key_Col_Body_ = "Col_Position_At_Pressing_For_Body_";
         public string key_Row_Body_ = "Row_Position_At_Pressing_For_Body_";
         public static bool did_A_Collision_Occur=false;
-        public static List<Rectangle> list_Snake_Parts=new List<Rectangle>();
+        public static List<Rectangle> list_Snake_Parts = new List<Rectangle>();
         public static List<Rectangle> list_Snake_Food=new List<Rectangle>();
         public static int gameArea_MaxWidth=700;
         public static int gameArea_MaxHeight = 700;
-        public static int No_Of_gameArea_Cols=26;
-        public static int No_Of_gameArea_Rows=27;
         public static bool isFoodCollisionOccurred = false;
         public static bool isDeadCollisionOccurued=false;
         public static int timerTick = 500;
@@ -50,6 +48,15 @@ namespace Grid_Test.__Globals
         {
             right=0, left=1, up=2, down=3
         }
+        //-----------------gameArea----------------------
+        public static string gameArea_Name = "gameArea";
+        public static Brush gameArea_Background = Brushes.Black;
+        public static int gameArea_Height = 500;
+        public static int gameArea_Width = 500;
+        public static int No_Of_gameArea_Cols = 20;
+        public static int No_Of_gameArea_Rows = 20;
+
+
 
     }
 }

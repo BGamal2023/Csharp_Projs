@@ -21,6 +21,7 @@ using Grid_Test._2_Deps._7_Player_Score_Handler;
 using Grid_Test.My_Libs.My_Lib_1.Globals;
 using Label = System.Windows.Controls.Label;
 using Grid_Test._2_Deps._5_Game_Levels_Handler;
+using Grid_Test._2_Deps._A_10_Game_Area_Handler;
 
 
 namespace Grid_Test._1_Managers
@@ -34,25 +35,26 @@ namespace Grid_Test._1_Managers
         Food_Collision_Handler obj_Food_Collision_Handler=new Food_Collision_Handler();
         Dead_Collision_Handler obj_Dead_Collision_Handler=new Dead_Collision_Handler();
         Score_Handler obj_Score_Handler=new Score_Handler();
-        Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler(); 
+        Game_Level_Handler obj_Game_Level_Handler=new Game_Level_Handler();
+        Game_Area_Handler obj_Game_Area_Handler = new Game_Area_Handler();
         //---------------------------------------------------------------
-        public void start_The_Game(Grid gameArea)
+        public Grid start_The_Game(MainWindow mainwindow)
         {
+            Grid gameArea = obj_Game_Area_Handler.handle_The_Game_Area(mainwindow);
                 add_The_Snake_Head_To_The_gameArea(gameArea);
                obj_Snake_Food_Handler.add_The_First_Snake_Food_To_The_gameArea(gameArea);
+            
              
-
+            return gameArea;
         }
         //---------------------------------------------------------------
         public void handle_The_Snake_In_The_gameArea(
             DispatcherTimer gameTimer,
-            Grid gameArea,
-            Label scoreValue,
-            Label playerHealth,
-            Label level)
+            Grid gameArea
+           )
         {
 
-            start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea,scoreValue,playerHealth,level);
+            start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(gameTimer,gameArea);
          
 
     
@@ -61,16 +63,15 @@ namespace Grid_Test._1_Managers
 
         private void start_The_Timer_That_Will_Cyclically_Call_The_Snake_Handling_Methods(
              DispatcherTimer gameTimer,
-            Grid gameArea,
-            Label scoreValue,
-            Label playerHealth,
-            Label level
+            Grid gameArea
             )
         {
             gameTimer.Tick += (sender, e) =>
             {
+                /// timer_Tick_Callback(
+                /// sender, e, gameArea, gameTimer, scoreValue, playerHealth, level);*/
                 timer_Tick_Callback(
-                sender, e, gameArea, gameTimer, scoreValue, playerHealth, level);
+                sender, e, gameArea, gameTimer);
             };
             gameTimer.Interval = TimeSpan.FromMilliseconds(Globals.timerTick);
             gameTimer.Start();
@@ -81,19 +82,16 @@ namespace Grid_Test._1_Managers
             object? sender, 
             EventArgs e, 
             Grid gameArea,
-            DispatcherTimer gameTimer, 
-            Label scoreValue,
-            Label playerHealth,
-            Label level
+            DispatcherTimer gameTimer
             )
         {
-           check_Dead_Collision(gameTimer);
+            check_Dead_Collision(gameTimer);
             move_The_Snake();
             feed_The_Snake(gameArea);
             check_Food_Collision();
-            update_Player_Score( scoreValue);
-            update_Player_Healthy(playerHealth);
-            update_The_Game_Level(level,gameTimer);
+           /// update_Player_Score( scoreValue);
+           /// update_Player_Healthy(playerHealth);
+           /// update_The_Game_Level(level,gameTimer);
 
 
         }
@@ -194,7 +192,20 @@ namespace Grid_Test._1_Managers
 
             obj_Game_Level_Handler.update_Game_Level(gameTimer);
         }
+        //-------------------------------------------------------------------
+        public void add_Some_Other_Components_To_mainWidow(MainWindow mainWindow)
+        {
+           
+            Label Score_Value=new Label();
+            Label player_Healthy=new Label();
+            Label level_Value=new Label();
 
+            mainWindow.Content = Score_Value;
+            mainWindow.Content=player_Healthy;
+            mainWindow.Content=level_Value;
+
+
+        }
 
     }
 

@@ -5,135 +5,139 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Grid_Test"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="700">
-    <DockPanel LastChildFill="True">
-        <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="handle_The_Keys_Strokes" Focusable="True" >
+        Title="MainWindow" Height="700" Width="700"
+        KeyDown="handle_The_Keys_Strokes">
+ 
+    <!-- <DockPanel LastChildFill="True">
+     <Grid Name="gameArea"  DockPanel.Dock="Bottom" Height="600" ShowGridLines="False" Background="black" KeyDown="handle_The_Keys_Strokes" Focusable="True" >
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+         <Grid.ColumnDefinitions>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
 
-            </Grid.ColumnDefinitions>
+         </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+         <Grid.RowDefinitions>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
+             <RowDefinition/>
 
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+             <RowDefinition/>
+         </Grid.RowDefinitions>
 
 
-        </Grid>
-        <Grid x:Name="infoArea" DockPanel.Dock="Top" Height="72" Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label 
-                Name="Score"
-                Content="Score" Grid.Row="0" 
+     </Grid>
+     <Grid x:Name="infoArea" DockPanel.Dock="Top" Height="72" Background="White">
+         <Grid.ColumnDefinitions>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+             <ColumnDefinition/>
+         </Grid.ColumnDefinitions>
+
+         <Grid.RowDefinitions>
+             <RowDefinition/>
+             <RowDefinition/>
+         </Grid.RowDefinitions>
+         <Label 
+             Name="Score"
+             Content="Score" Grid.Row="0" 
+             FontSize="15" 
+             HorizontalContentAlignment="Center"
+             VerticalContentAlignment="Center"/>
+         <Label Name="Live" 
+                Content="Player_Live"  
+                FontSize="15" Grid.ColumnSpan="2"
+                Grid.Row="0" Grid.Column="3"
+                 HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"/>
+         <Label Name="Level" 
+                Content="Level" 
                 FontSize="15" 
-                HorizontalContentAlignment="Center"
+                Grid.Row="0" Grid.Column="7"
+                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"/>
-            <Label Name="Live" 
-                   Content="Player_Live"  
-                   FontSize="15" Grid.ColumnSpan="2"
-                   Grid.Row="0" Grid.Column="3"
-                    HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"/>
-            <Label Name="Level" 
-                   Content="Level" 
-                   FontSize="15" 
-                   Grid.Row="0" Grid.Column="7"
-                    HorizontalContentAlignment="Center"
-                   VerticalContentAlignment="Center"/>
-            
-            <Label Name="Score_Value" 
-                   Grid.Column="1"
-                   Grid.Row="0" 
-                    Background="Bisque"
-                   FontStyle="Italic"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"/>
-            <Label Name="player_Healthy" 
-                Grid.Column="5"
-                   Grid.Row="0" 
-                    Background="Bisque"
+
+         <Label Name="Score_Value" 
+                Grid.Column="1"
+                Grid.Row="0" 
+                 Background="Bisque"
                 FontStyle="Italic"
-                HorizontalContentAlignment="Center"
+                 HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"/>
-            <Label Name="level_value" 
-                Grid.Column="8"
-                FontStyle="Italic"
-                   Background="Bisque"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"/>
-            
-        </Grid>
-    </DockPanel>
-    
+         <Label Name="player_Healthy" 
+             Grid.Column="5"
+                Grid.Row="0" 
+                 Background="Bisque"
+             FontStyle="Italic"
+             HorizontalContentAlignment="Center"
+              VerticalContentAlignment="Center"/>
+         <Label Name="level_value" 
+             Grid.Column="8"
+             FontStyle="Italic"
+                Background="Bisque"
+             HorizontalContentAlignment="Center"
+             VerticalContentAlignment="Center"/>
+
+     </Grid>
+ </DockPanel>  -->
+   
+ 
+
 </Window>
