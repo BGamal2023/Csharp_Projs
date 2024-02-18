@@ -1,4 +1,5 @@
 ﻿using Grid_Test.__Globals;
+using Grid_Test._2_Deps._9_List_Of_Snake_Parts_Handler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,16 @@ namespace Grid_Test._2_Deps._8_Create_Rectangle
 {
     internal class Creating_Rect
     {
+        //------------------------------------------------------------------------------------------
+        private List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
 
+        //------------------------------------------------------------------------------------------
 
         public Rectangle create_Rec(
              Grid gameArea,
             Brush color,
             int X,
-            int Y,
-            List<Rectangle> list)
+            int Y)
         {
             Rectangle rec = new Rectangle()
             {
@@ -34,11 +37,13 @@ namespace Grid_Test._2_Deps._8_Create_Rectangle
             gameArea.Children.Add(rec);
             Grid.SetColumn(rec, X);
             Grid.SetRow(rec, Y);
-
-            list.Add(rec);
+            
+        
 
             return rec;
         }
+        //------------------------------------------------------------------------------------------
+
     }
 
 }
