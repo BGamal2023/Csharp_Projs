@@ -45,3 +45,4 @@ E:\Programming\12_C#\Applications\My_Snake_Game\Grid_Test\obj\Debug\net8.0-windo
 E:\Programming\12_C#\Applications\My_Snake_Game\Grid_Test\obj\Debug\net8.0-windows\ref\Grid_Test.dll
 E:\Programming\12_C#\Applications\My_Snake_Game\Grid_Test\obj\Debug\net8.0-windows\_0_Main\MainWindow.g.cs
 E:\Programming\12_C#\Applications\My_Snake_Game\Grid_Test\obj\Debug\net8.0-windows\_0_Main\MainWindow.baml
+E:\Programming\12_C#\Applications\My_Snake_Game\Grid_Test\obj\Debug\net8.0-windows\Grid_Test.sourcelink.json

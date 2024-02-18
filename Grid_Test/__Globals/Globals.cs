@@ -25,8 +25,8 @@ namespace Grid_Test.__Globals
         public static bool isDeadCollisionOccurued=false;
         public static int timerTick = 500;
         public static UIElement collisionRec;
-        public static int snake_Head_X = 20;
-        public static int snake_Head_Y = 20;
+        public static int snake_Head_X = 5;
+        public static int snake_Head_Y = 5;
         public static Brush snake_Head_Color = Brushes.Red;
         public static Brush snake_Body_Color = Brushes.Green;
         public static Brush snake_Food_Color = Brushes.SkyBlue;

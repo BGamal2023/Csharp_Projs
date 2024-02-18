@@ -25,13 +25,13 @@ namespace Grid_Test._2_Deps._3_Snake_Food_Handler
             var nextCol = new Random();
             var nextRow = new Random();
             //---------------
-            obj_Creating_Rect.create_Rec(
+          var snakeFood=  obj_Creating_Rect.create_Rec(
                 gameArea,
                 Globals.snake_Food_Color,
                 nextCol.Next(0, Globals.No_Of_gameArea_Cols),
-                nextRow.Next(0, Globals.No_Of_gameArea_Rows),
-                Globals.list_Snake_Food
+                nextRow.Next(0, Globals.No_Of_gameArea_Rows)
                 );
+            Globals.list_Snake_Food.Add(snakeFood);
             //---------------
 
 
@@ -62,7 +62,6 @@ namespace Grid_Test._2_Deps._3_Snake_Food_Handler
         //-----------------------------------------------------------
         public void eat_Snake_Food(Grid gameArea)
         {
-
            gameArea.Children.Remove( Globals.list_Snake_Food[0]);
             Globals.list_Snake_Food.Clear();
         }

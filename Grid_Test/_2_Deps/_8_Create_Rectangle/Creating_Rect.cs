@@ -13,10 +13,7 @@ namespace Grid_Test._2_Deps._8_Create_Rectangle
 {
     internal class Creating_Rect
     {
-        //------------------------------------------------------------------------------------------
-        private List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
-
-        //------------------------------------------------------------------------------------------
+       
 
         public Rectangle create_Rec(
              Grid gameArea,

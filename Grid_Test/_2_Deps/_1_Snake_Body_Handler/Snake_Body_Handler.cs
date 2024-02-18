@@ -40,7 +40,7 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             if (Global_Directions.goRight)
             {
                 //------
-                int X = Grid.GetColumn(last_Snake_Part) +1;
+                int X = Grid.GetColumn(last_Snake_Part) -1;
                 int Y = Grid.GetRow(last_Snake_Part);
                 //------
              add_During_Moving(gameArea,Globals.snake_Body_Color, X, Y);
@@ -50,7 +50,7 @@ namespace Grid_Test._2_Deps._1_Snake_Body_Handler
             else if (Global_Directions.goLeft)
             {
                 //------
-                int X = Grid.GetColumn(last_Snake_Part) - 1;
+                int X = Grid.GetColumn(last_Snake_Part) + 1;
                 int Y = Grid.GetRow(last_Snake_Part);
                 //------
                 add_During_Moving(gameArea, Globals.snake_Body_Color, X, Y);

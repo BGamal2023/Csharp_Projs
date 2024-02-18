@@ -53,7 +53,7 @@ namespace Grid_Test {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Grid_Test;V1.0.0.0;component/_0_main/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Grid_Test;component/_0_main/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\_0_Main\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
