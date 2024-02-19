@@ -21,41 +21,30 @@ using System.Windows.Threading;
 namespace Grid_Test
 
 {
-    //! bug #0 bug in move .....durin down if you rapidly press left then up ...the snake befor 
-    //! go left it will move up
-    
-
-    //! i am try to test   draw_The_Snake_V2(); it need to be tested again 
-
-    // TODO: 
+    /// bug #0 bug in move .....durin down if you rapidly press left then up ...the snake befor 
+    /// go left it will move up
+    ///i am try to test   draw_The_Snake_V2(); it need to be tested again 
     /// <summary>
     /// 
     /// </summary>
     public partial class MainWindow : Window
     {
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
         General_Manager obj_General_Manager = new General_Manager();
         Key_Strokes_Handler obj_Key_Strokes_Handler=new Key_Strokes_Handler();
         DispatcherTimer myTimer=new DispatcherTimer();
-        Game_Area_Handler obj_Game_Area_Handler=new Game_Area_Handler();
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
         public MainWindow()
         {
-            //------------------
-
+            //--
             InitializeComponent();
-           /// gameArea.Focus();jfkjajf
-           
-            //------------------
-          Grid gameArea=
-                obj_General_Manager.start_The_Game(this);
-        ///    obj_General_Manager.add_Some_Other_Components_To_mainWidow(this);
-
+            //--
+          Grid gameArea=obj_General_Manager.start_The_Game(this);
+            //--
           obj_General_Manager.handle_The_Snake_In_The_gameArea( myTimer, gameArea);
-        
-            //------------------
+            //--
         }
-        //--------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------
         private void handle_The_Keys_Strokes(object sender, KeyEventArgs e)
         {
              obj_Key_Strokes_Handler.handle_The_Keys_Strokes(e);
@@ -63,5 +52,7 @@ namespace Grid_Test
 
 
         }
+        //-------------------------------------------------------------------------------------
+
     }
 }
