@@ -16,11 +16,11 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
         public void detect_The_Dead_Collision()
         {
             List_Of_Snake_Parts_Handler obj_List_Of_Snake_Parts_Handler=new List_Of_Snake_Parts_Handler();
-            //-------------
+            //--
             UIElement SnakeHead = obj_List_Of_Snake_Parts_Handler.get_Item_From_The_List(0);
             int curCol_SnakeHead = Grid.GetColumn(SnakeHead);
             int curRow_SnakeHead=Grid.GetRow(SnakeHead);
-            //-------------
+            //--
            int listCount= obj_List_Of_Snake_Parts_Handler.get_The_Count_Of_list_Of_The_Snake_Parts();
             for (int i=1; i < listCount; i++)
             {
@@ -35,6 +35,7 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
                 }
 
             }
+            //--
         }
         //-------------------------------------------------------------------------------------------------
 

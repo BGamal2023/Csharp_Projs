@@ -220,6 +220,8 @@ namespace Grid_Test._1_Managers
             mainWindow.Content=level_Value;
             //--
         }
+        //------------------------------------------------------------------------------------
+
 
     }
 

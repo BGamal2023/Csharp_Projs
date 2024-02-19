@@ -10,5 +10,7 @@ namespace Grid_Test
       ///  8- clean all the commented code 
       ///  9- change all unexplained names for variables and methods.
        /// 10- check the fast readability for method by method ("you should understand what it do from first look").
+       /// 11- solve the bug of ("if the snakehead beside the food and collission occured snake not eat the foof why?!!!");
+       /// 12- 
     }
 }
