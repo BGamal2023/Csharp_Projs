@@ -43,7 +43,8 @@ namespace Grid_Test._1_Managers
         {
             Grid gameArea = obj_Game_Area_Handler.handle_The_Game_Area(mainwindow);
                 add_The_Snake_Head_To_The_gameArea(gameArea);
-               obj_Snake_Food_Handler.feed_The_Snake(gameArea);
+            /// obj_Snake_Food_Handler.feed_The_Snake_V0(gameArea);
+            obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
             
              
             return gameArea;
@@ -88,7 +89,7 @@ namespace Grid_Test._1_Managers
             )
         {
             //--
-            check_Dead_Collision(gameTimer);
+          ///  check_Dead_Collision(gameTimer);
             //--
             move_The_Snake();
             //--
@@ -153,7 +154,8 @@ namespace Grid_Test._1_Managers
             {
                 obj_Snake_Food_Handler.eat_Snake_Food(gameArea);
                 obj_Snake_Body_Handler.add_New_Part_To_Body_Of_The_Snake(gameArea);
-                obj_Snake_Food_Handler.feed_The_Snake(gameArea);
+               /// obj_Snake_Food_Handler.feed_The_Snake_V0(gameArea);
+                obj_Snake_Food_Handler.feed_The_Snake_V1(gameArea);
                 Globals.isFoodCollisionOccurred = false;
             }
             //--

@@ -11,6 +11,8 @@ namespace Grid_Test
       ///  9- change all unexplained names for variables and methods.
        /// 10- check the fast readability for method by method ("you should understand what it do from first look").
        /// 11- solve the bug of ("if the snakehead beside the food and collission occured snake not eat the foof why?!!!");
-       /// 12- 
+       /// 12- slove the bug if you press fast it can move left during moving right and it can move up during running down
+       /// 13- solve the bug in some scenarios if the snake length become too big the game stopped suddenly.
+       /// 14- add protection layer.
     }
 }

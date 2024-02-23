@@ -45,7 +45,10 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
         private void detect_The_Food_Collision_In_Right_Dir(int curCol_SnakeHead,int curCol_food_Rec,int curRow_SnakeHead, int curRow_food_Rec) {
             if (Globals.currDirection == (int)Globals.En_currentDirection.right)
             {
-                if (curCol_SnakeHead + 1 == curCol_food_Rec && curRow_SnakeHead==curRow_food_Rec)
+                if (
+                    (curCol_SnakeHead + 1 == curCol_food_Rec && curRow_SnakeHead==curRow_food_Rec) ||
+                    (curCol_SnakeHead == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+                    )
                 {
                     Globals.isFoodCollisionOccurred = true;
                     Globals.Score++;
@@ -57,7 +60,10 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
         private void detect_The_Food_Collision_In_Left_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
             if (Globals.currDirection == (int)Globals.En_currentDirection.left)
             {
-                if (curCol_SnakeHead - 1 == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+                if (
+                    (curCol_SnakeHead - 1 == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)  ||
+                     (curCol_SnakeHead == curCol_food_Rec && curRow_SnakeHead == curRow_food_Rec)
+                    )
                 {
                     Globals.isFoodCollisionOccurred = true;
                     Globals.Score++;
@@ -68,7 +74,10 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
         private void detect_The_Food_Collision_In_Up_Dir(int curCol_SnakeHead, int curCol_food_Rec, int curRow_SnakeHead, int curRow_food_Rec) {
             if (Globals.currDirection == (int)Globals.En_currentDirection.up)
             {
-                if (curRow_SnakeHead - 1 == curRow_food_Rec&& curCol_SnakeHead==curCol_food_Rec)
+                if (
+                    (curRow_SnakeHead - 1 == curRow_food_Rec&& curCol_SnakeHead==curCol_food_Rec) ||
+                    (curRow_SnakeHead  == curRow_food_Rec && curCol_SnakeHead == curCol_food_Rec)
+                    )
                 {
                     Globals.isFoodCollisionOccurred = true;
                     Globals.Score++;
@@ -80,7 +89,10 @@ namespace Grid_Test._2_Deps._4_Collision_Handler
 
             if (Globals.currDirection == (int)Globals.En_currentDirection.down )
             {
-                if (curRow_SnakeHead + 1 == curRow_food_Rec&&curCol_SnakeHead == curCol_food_Rec)
+                if (
+                    (curRow_SnakeHead + 1 == curRow_food_Rec&&curCol_SnakeHead == curCol_food_Rec) ||
+                    (curRow_SnakeHead == curRow_food_Rec && curCol_SnakeHead == curCol_food_Rec)
+                    )
                 {
                     Globals.isFoodCollisionOccurred = true;
                     Globals.Score++;

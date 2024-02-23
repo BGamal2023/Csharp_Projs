@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming\\12_C#\\Applications\\My_Snake_Game\\Grid_Test\\Grid_Test.csproj",
-      "projectName": "Grid_Test",
-      "projectPath": "E:\\Programming\\12_C#\\Applications\\My_Snake_Game\\Grid_Test\\Grid_Test.csproj",
+      "projectUniqueName": "E:\\Programming\\12_C#\\C_Sharp_Projects\\Applications\\My_Snake_Game\\Grid_Test\\Snake_Game.csproj",
+      "projectName": "Snake_Game",
+      "projectPath": "E:\\Programming\\12_C#\\C_Sharp_Projects\\Applications\\My_Snake_Game\\Grid_Test\\Snake_Game.csproj",
       "packagesPath": "C:\\Users\\BG\\.nuget\\packages\\",
-      "outputPath": "E:\\Programming\\12_C#\\Applications\\My_Snake_Game\\Grid_Test\\obj\\",
+      "outputPath": "E:\\Programming\\12_C#\\C_Sharp_Projects\\Applications\\My_Snake_Game\\Grid_Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\BG\\AppData\\Roaming\\NuGet\\NuGet.Config",

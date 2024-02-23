@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HPKHir09KuXPoRyZ931XphvORb7X5p3sf8wRUcKOHmraFSUpOJzNazHSMoZKPYINJQStx+E6q53NTkgFfPPvjw==",
+  "dgSpecHash": "Eqj8rrzDyU2wuVg4BG6PcXauHxAbyY+fDMQwgnr9kI0rPsYFfLvRyNLazbnx3thL4Kk1aubHq6DujlbfKcUpDg==",
   "success": true,
-  "projectFilePath": "E:\\Programming\\12_C#\\Applications\\My_Snake_Game\\Grid_Test\\Grid_Test.csproj",
+  "projectFilePath": "E:\\Programming\\12_C#\\C_Sharp_Projects\\Applications\\My_Snake_Game\\Grid_Test\\Snake_Game.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
